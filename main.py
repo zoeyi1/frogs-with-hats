@@ -2,7 +2,6 @@ import discord
 import os
 from discord import app_commands
 from discord.ext import commands
-from keepAlive import keepAlive
 
 intent = discord.Intents.default()
 intent.members = True
@@ -47,6 +46,5 @@ async def dm(interaction: discord.Interaction, user: discord.Member, message: st
         # In case the bot cannot send a DM (e.g., user has DMs disabled)
         await interaction.response.send_message(f"Unable to send a DM to {user.mention}. They might have DMs disabled.", ephemeral=True)
 
-keepAlive()
 my_secret = os.environ['TOKEN']
 bot.run(my_secret)
